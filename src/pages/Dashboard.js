@@ -23,8 +23,6 @@ const Dashboard = () => {
     return result.length;
   };
 
-  console.log(status);
-
   return (
     <Container maxWidth="xl">
       <Typography variant="h4" sx={{ mb: 5 }}>
