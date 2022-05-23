@@ -11,7 +11,11 @@ const Dashboard = () => {
   }, []);
 
   const getData = async () => {
-    const response = await fetch("/api/status/");
+    const response = await fetch("/api/status/", {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
     const data = await response.json();
     setStatus(data);
   };
