@@ -21,13 +21,13 @@ export default function Installations() {
   }, []);
 
   const getData = async () => {
-    const response = await fetch("api/installations/");
+    const response = await fetch("/api/installations");
     const data = await response.json();
     setRecord(data);
   };
 
   const getStatus = async () => {
-    const response = await fetch("api/status/");
+    const response = await fetch("/api/status");
     const data = await response.json();
     setStatus(data);
   };

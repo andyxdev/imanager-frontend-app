@@ -178,21 +178,25 @@ const Form = () => {
         onChange={handleChange}
       />
       {Object.keys(params).length != 0 && <Divider />}
-      {Object.keys(params).length != 0 && <InputLabel id="demo-simple-select-label">Select Status</InputLabel>}
+      {Object.keys(params).length != 0 && (
+        <InputLabel id="demo-simple-select-label">Select Status</InputLabel>
+      )}
 
-      {Object.keys(params).length != 0 && <Select
-        labelId="demo-simple-select-label"
-        id="demo-simple-select"
-        value={status?.status}
-        label="status"
-        name="status"
-        onChange={handleChange}
-      >
-        <MenuItem value="Requested">Requested</MenuItem>
-        <MenuItem value="In progress">In progress</MenuItem>
-        <MenuItem value="Complete">Complete</MenuItem>
-        <MenuItem value="Rejected">Rejected</MenuItem>
-      </Select>}
+      {Object.keys(params).length != 0 && (
+        <Select
+          labelId="demo-simple-select-label"
+          id="demo-simple-select"
+          value={status?.status}
+          label="status"
+          name="status"
+          onChange={handleChange}
+        >
+          <MenuItem value="Requested">Requested</MenuItem>
+          <MenuItem value="In progress">In progress</MenuItem>
+          <MenuItem value="Complete">Complete</MenuItem>
+          <MenuItem value="Rejected">Rejected</MenuItem>
+        </Select>
+      )}
       <Divider />
 
       <div style={styles.buttons}>

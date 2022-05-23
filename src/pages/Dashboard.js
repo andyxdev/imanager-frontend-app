@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import PieChart from "../components/PieChart";
 import Table from "../components/Table";
-import { Grid, Container, Typography } from '@mui/material';
+import { Grid, Container, Typography } from "@mui/material";
 
 const Dashboard = () => {
   const [status, setStatus] = useState([]);
@@ -11,25 +11,25 @@ const Dashboard = () => {
   }, []);
 
   const getData = async () => {
-    const response = await fetch("api/status/");
+    const response = await fetch("/api/status/");
     const data = await response.json();
     setStatus(data);
   };
-    const getNumber =(state) => {
-      const result = status.filter((stat) => {
+  const getNumber = (state) => {
+    const result = status.filter((stat) => {
       return stat.status === state;
     });
 
-      return result.length
+    return result.length;
+  };
 
-    }
-
+  console.log(status);
 
   return (
     <Container maxWidth="xl">
-        <Typography variant="h4" sx={{ mb: 5 }}>
-          Hi, Welcome back
-        </Typography>
+      <Typography variant="h4" sx={{ mb: 5 }}>
+        Hi, Welcome back
+      </Typography>
 
       <div class="alert alert-warning fade collapse" role="alert" id="myAlert">
         <button
@@ -98,8 +98,7 @@ const Dashboard = () => {
       <div class="row ">
         <div class="col-lg-7 col-md-6 col-sm-12">
           <h5 class="mt-3 mb-3 text-secondary">Installations</h5>
-          <div class="table-responsive">
-          </div>
+          <div class="table-responsive"></div>
         </div>
         <div className="col-lg-5 col-md-6 col-sm-12 col-sm-offset-5">
           <h4 className="title mt-3 mb-3 text-center text-secondary">
@@ -111,7 +110,7 @@ const Dashboard = () => {
           ></div>
         </div>
       </div>
-      </Container>
+    </Container>
   );
 };
 

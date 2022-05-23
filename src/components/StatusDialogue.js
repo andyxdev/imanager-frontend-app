@@ -30,7 +30,7 @@ export default function FormDialog({ opendialogue, recordid, handleClose }) {
   };
 
   const createStatus = async () => {
-    const response = await fetch(`/api/status/`, {
+    const response = await fetch(`/api/status`, {
       method: "POST",
       headers: {
         "Content-Type": "Application/json",
